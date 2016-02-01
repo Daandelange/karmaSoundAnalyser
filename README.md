@@ -1,3 +1,9 @@
+Obsolete ! ! !
+=================
+Hello, please note that this is an old version.  
+Get the most recent version from [/karmaMapper/utilities/karmaSoundAnalyser](https://github.com/Karma-Kusala/karmaMapper/tree/master/utilities/karmaSoundAnalyser).  
+_(This repo will be updated with the latest version)_
+
 karmaSoundAnalyser
 ==================
 
@@ -15,7 +21,6 @@ I’ve had difficulties compiling the Pd plugin and I got it working using Pd-Ex
 Other features include an alternative onSet detection, pitch detection, silence detection and a 5-band equaliser.
 
 Note: not all collected data is yet set to be forwarded trough OSC.
-
 
 - - - -
 
