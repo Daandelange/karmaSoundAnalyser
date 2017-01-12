@@ -1,0 +1,18 @@
+#N canvas 253 103 465 300 10;
+#X obj 67 246 spigot;
+#X obj 137 204 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 67 267 print;
+#X text 156 202 Enable / Disable;
+#X text 65 103 Simple utility for displaying incomming OSC data;
+#X msg 67 141 status;
+#X obj 67 179 netreceive 12000 localhost;
+#X obj 67 199 oscparse;
+#X obj 23 221 print;
+#X connect 0 0 2 0;
+#X connect 1 0 0 1;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 0 8 0;
+#X connect 6 1 0 0;
+#X connect 7 0 0 0;
