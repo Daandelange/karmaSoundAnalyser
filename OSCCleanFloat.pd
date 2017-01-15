@@ -1,50 +1,50 @@
-#N canvas 34 132 545 493 10;
-#X obj 182 243 metro \$1;
-#X obj -28 119 inlet;
-#X obj 182 221 != 0;
-#X obj 192 146 \$1;
-#X obj 218 146 loadbang;
-#X text 213 169 Default Frequency (ms);
-#X obj -49 193 tgl 15 0 empty empty Frequency_Controll_[on/off] 17
-7 0 10 -262144 -1 -1 1 1;
-#X obj -82 119 inlet;
-#X text -149 119 Data input;
-#X obj -49 238 != 1;
-#X floatatom 240 244 5 0 0 1 Raw_input - -;
-#X floatatom 324 314 5 0 0 0 Summed_Values - -;
-#X obj 191 342 + 1;
-#X text 60 441 See also resample \, sendmany-osc.pd and lop;
-#X obj 8 278 ==;
-#X obj -97 338 f;
-#X floatatom -85 364 5 0 0 0 - - -;
-#X obj 8 321 sel 0;
-#X obj -97 389 outlet float;
-#X obj 218 321 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#N canvas 646 22 650 610 10;
+#X obj 378 248 metro \$1;
+#X obj 168 124 inlet;
+#X obj 378 226 != 0;
+#X obj 388 151 \$1;
+#X obj 414 151 loadbang;
+#X text 409 174 Default Frequency (ms);
+#X obj 147 198 tgl 15 0 empty empty Frequency_Controll_[on/off] 17
+7 0 10 -262144 -1 -1 0 1;
+#X obj 114 124 inlet;
+#X text 47 124 Data input;
+#X obj 147 243 != 1;
+#X floatatom 436 249 5 0 0 1 Raw_input - -, f 5;
+#X floatatom 520 319 5 0 0 0 Summed_Values - -, f 5;
+#X obj 387 347 + 1;
+#X text 256 446 See also resample \, sendmany-osc.pd and lop;
+#X obj 204 283 ==;
+#X obj 99 343 f;
+#X floatatom 111 369 5 0 0 0 - - -, f 5;
+#X obj 204 326 sel 0;
+#X obj 99 394 outlet float;
+#X obj 414 326 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 240 208 spigot;
-#X obj 189 298 i;
-#X floatatom 257 384 5 0 0 0 Num_Values - -;
-#X obj 191 320 i;
-#X obj 164 397 /;
-#X floatatom 164 420 5 0 0 0 Averaged_Value - -;
-#X obj -82 262 spigot;
-#X text -151 23 Cleans data flow for OSC output.;
-#X text -151 38 Unchanged values are not re-sent.;
-#X text 147 23 (Tested only for ints and floats);
-#X text -150 52 Too frequent values are sent less frequent and averaged.
+#X obj 436 213 spigot;
+#X obj 385 303 i;
+#X floatatom 453 389 5 0 0 0 Num_Values - -, f 5;
+#X obj 387 325 i;
+#X obj 360 402 /;
+#X floatatom 360 425 5 0 0 0 Averaged_Value - -, f 5;
+#X obj 114 267 spigot;
+#X text 45 28 Cleans data flow for OSC output.;
+#X text 45 43 Unchanged values are not re-sent.;
+#X text 343 28 (Tested only for ints and floats);
+#X text 46 57 Too frequent values are sent less frequent and averaged.
 ;
-#X text 11 118 Freq.Cont. [on/off];
-#X obj 182 125 inlet;
-#X text 221 124 Set frequency (ms);
-#X text -150 67 Set frequency with \$1 creation argument or 3rd inlet.
+#X text 207 123 Freq.Cont. [on/off];
+#X obj 378 130 inlet;
+#X text 417 129 Set frequency (ms);
+#X text 46 72 Set frequency with \$1 creation argument or 3rd inlet.
 ;
-#X obj 129 136 sel 1;
-#X obj 182 367 i;
-#X obj 218 298 +;
-#X obj 205 268 i 0;
-#X obj 182 169 i 16;
-#X text 216 182 16.6666ms for 60FPS;
-#X text 100 256 Todo: disable metro when flow goes slower ?;
+#X obj 325 141 sel 1;
+#X obj 378 372 i;
+#X obj 414 303 +;
+#X obj 401 273 i 0;
+#X obj 378 174 i 16;
+#X text 412 187 16.6666ms for 60FPS;
+#X text 439 268 Todo: disable metro when flow goes slower ?;
 #X connect 0 0 36 0;
 #X connect 0 0 38 0;
 #X connect 1 0 6 0;

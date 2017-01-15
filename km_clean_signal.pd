@@ -1,0 +1,18 @@
+#N canvas 796 337 450 300 10;
+#X obj 51 156 ==;
+#X obj 93 139 f;
+#X floatatom 102 162 5 0 0 0 - - -, f 5;
+#X text 24 10 SIGNAL CLEANER;
+#X obj 51 91 inlet float;
+#X obj 51 179 sel 0;
+#X obj 93 186 outlet float;
+#X text 25 27 Prevents resending bangs when the float value has not
+changed. (Sort of flood filter);
+#X text 25 57 Alterntively use the native [change];
+#X connect 0 0 5 0;
+#X connect 1 0 0 1;
+#X connect 1 0 2 0;
+#X connect 1 0 6 0;
+#X connect 4 0 0 0;
+#X connect 4 0 1 1;
+#X connect 5 0 1 0;
