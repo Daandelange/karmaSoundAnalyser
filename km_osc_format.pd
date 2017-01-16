@@ -1,8 +1,8 @@
-#N canvas 984 130 433 415 10;
+#N canvas 721 193 433 415 10;
 #X obj 28 273 list prepend send;
 #X obj 28 296 list trim;
 #X obj 28 126 spigot;
-#X obj 61 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 61 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 111 86 r osc_status;
 #X text 77 105 Broadcasting;

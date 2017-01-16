@@ -1,134 +1,127 @@
-#N canvas 126 47 1262 668 10;
+#N canvas 518 108 862 578 10;
 #X declare -stdpath mrpeach;
-#X obj 150 152 vsl 10 50 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 150 62 vsl 10 50 0 100 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 272 163 vsl 10 120 0 100 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 308 73 vsl 10 120 0 100 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 272 137 - 50;
-#X obj 150 112 sigmund~ -npeak 7 pitch notes env peaks tracks;
-#X floatatom 202 166 5 0 0 0 - - -, f 5;
-#X obj 150 26 adc~;
-#X obj 233 39 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 9900 1;
-#X obj 213 60 *~;
-#X obj 186 61 *~;
-#X obj 193 80 dac~;
-#X floatatom 14 430 5 0 0 0 - - -, f 5;
-#X obj 162 510 i;
-#X obj 200 511 + 1;
-#X floatatom 162 533 5 0 0 0 - - -, f 5;
-#X obj 119 509 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 308 47 - 50;
+#X floatatom 202 76 5 0 0 0 - - -, f 5;
+#X obj 150 -64 adc~;
+#X obj 233 -51 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 213 -30 *~;
+#X obj 186 -29 *~;
+#X obj 193 -10 dac~;
+#X floatatom 14 340 5 0 0 0 - - -, f 5;
+#X obj 162 420 i;
+#X obj 200 421 + 1;
+#X floatatom 162 443 5 0 0 0 - - -, f 5;
+#X obj 119 419 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 14 402 km_resample_avg 150;
-#X obj 186 405 i;
-#X obj 224 406 + 1;
-#X floatatom 186 428 5 0 0 0 - - -, f 5;
-#X obj 143 404 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 14 312 km_resample_avg 150;
+#X obj 186 315 i;
+#X obj 224 316 + 1;
+#X floatatom 186 338 5 0 0 0 - - -, f 5;
+#X obj 143 314 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 116 445 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 116 355 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 148 448 i 0;
-#X obj 516 19 declare -stdpath mrpeach;
-#X obj 423 386 mrpeach/udpsend;
-#X msg 274 314 connect localhost 1200;
-#X msg 345 337 disconnect;
-#X text 670 20 Make sure to load MrPeach;
-#X obj 423 413 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 148 358 i 0;
+#X obj 516 -71 declare -stdpath mrpeach;
+#X obj 387 296 mrpeach/udpsend;
+#X msg 238 224 connect localhost 1200;
+#X msg 309 247 disconnect;
+#X text 670 -70 Make sure to load MrPeach;
+#X obj 387 323 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 40 53 797 633 pack_FFT_for_OSC 0;
 #X obj 109 32 inlet raw_fft_bands;
-#X obj 148 63 t b a;
-#X obj 148 94 t b b b b b b b b b;
-#X msg 469 295 [, f 2;
-#X msg 133 295 ], f 2;
 #X text 241 11 Packs all 7 FFT bands in 1 single OSC bundle;
-#X text 275 94 Trigger Bundle Composition;
-#X obj 175 152 route 6 5 4 3 2 1 0, f 40;
+#X obj 109 92 route 6 5 4 3 2 1 0, f 40;
 #X obj 7 22 cnv 15 82 60 empty empty Equalizer 12 8 0 12 -191407 -66577
 0;
 #X obj 7 39 vsl 8 40 0 1 0 0 empty fft_1 empty 0 -9 0 10 -1 -261681
--1 3900 1;
+-1 0 1;
 #X obj 7 39 vsl 8 40 0 1 0 0 empty fft_1 empty 0 -9 0 10 -1 -261681
--1 3900 1;
+-1 0 1;
 #X obj 19 39 vsl 8 40 0 1 0 0 empty fft_2 empty 0 -9 0 10 -1 -261681
--1 332 1;
+-1 0 1;
 #X obj 31 39 vsl 8 40 0 1 0 0 empty fft_3 empty 0 -9 0 10 -1 -261681
--1 662 1;
+-1 0 1;
 #X obj 43 39 vsl 8 40 0 1 0 0 empty fft_4 empty 0 -9 0 10 -1 -261681
--1 166 1;
+-1 0 1;
 #X obj 55 39 vsl 8 40 0 1 0 0 empty fft_5 empty 0 -9 0 10 -1 -261681
--1 825 1;
+-1 0 1;
 #X obj 67 39 vsl 8 40 0 1 0 0 empty fft_6 empty 0 -9 0 10 -1 -261681
--1 989 1;
+-1 0 1;
 #X obj 79 39 vsl 8 40 0 1 0 0 empty fft_7 empty 0 -9 0 10 -1 -261681
--1 1152 1;
-#X obj 21 184 i 2048;
-#X text 29 165 FFT Amp scale;
-#X obj 21 145 loadbang;
+-1 0 1;
+#X obj 4 236 i 2048;
+#X text 12 217 FFT Amp scale;
+#X obj 4 197 loadbang;
 #X text 239 30 Also adapts their value scale and resamples them.;
-#X text 189 64 Update individual FFT band information;
-#X text 442 153 Each sine track: ID \, Freq (Hz) \, Amplitude \, Flag
+#X text 376 93 Each sine track: ID \, Freq (Hz) \, Amplitude \, Flag
 ;
-#X obj 175 217 km_sin_track_osc 7;
-#X obj 208 196 km_sin_track_osc 6;
-#X obj 242 174 km_sin_track_osc 5;
-#X obj 276 240 km_sin_track_osc 4;
-#X obj 378 174 km_sin_track_osc 1;
-#X obj 344 196 km_sin_track_osc 2;
-#X obj 310 218 km_sin_track_osc 3;
-#X obj 175 371 mrpeach/packOSC;
-#X obj 175 416 outlet OSC_bundle;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 1 1 7 0;
-#X connect 2 0 4 0;
-#X connect 2 8 3 0;
-#X connect 7 0 23 0;
-#X connect 7 1 24 0;
-#X connect 7 2 25 0;
-#X connect 7 3 26 0;
-#X connect 7 4 29 0;
-#X connect 7 5 28 0;
-#X connect 7 6 27 0;
-#X connect 19 0 17 0;
-#X connect 23 0 30 0;
-#X connect 24 0 30 0;
-#X connect 25 0 30 0;
-#X connect 26 0 30 0;
-#X connect 27 0 30 0;
-#X connect 28 0 30 0;
-#X connect 29 0 30 0;
-#X connect 30 0 31 0;
+#X obj 109 157 km_sin_track_osc 7;
+#X obj 142 136 km_sin_track_osc 6;
+#X obj 176 114 km_sin_track_osc 5;
+#X obj 210 180 km_sin_track_osc 4;
+#X obj 312 114 km_sin_track_osc 1;
+#X obj 278 136 km_sin_track_osc 2;
+#X obj 244 158 km_sin_track_osc 3;
+#X obj 109 311 mrpeach/packOSC;
+#X obj 109 356 outlet OSC_bundle;
+#X connect 0 0 2 0;
+#X connect 2 0 17 0;
+#X connect 2 1 18 0;
+#X connect 2 2 19 0;
+#X connect 2 3 20 0;
+#X connect 2 4 23 0;
+#X connect 2 5 22 0;
+#X connect 2 6 21 0;
+#X connect 14 0 12 0;
+#X connect 17 0 24 0;
+#X connect 18 0 24 0;
+#X connect 19 0 24 0;
+#X connect 20 0 24 0;
+#X connect 21 0 24 0;
+#X connect 22 0 24 0;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
 #X coords 0 -1 1 1 86 80 1 5 5;
-#X restore 423 156 pd pack_FFT_for_OSC;
+#X restore 387 66 pd pack_FFT_for_OSC;
+#X obj 387 270 spigot;
+#X obj 150 22 sigmund~ -npeak 7 pitch notes env tracks;
 #X connect 2 0 1 0;
-#X connect 3 0 0 0;
-#X connect 3 1 4 0;
-#X connect 3 2 2 0;
-#X connect 3 4 28 0;
-#X connect 5 0 8 0;
-#X connect 5 0 3 0;
-#X connect 5 1 7 0;
-#X connect 5 1 3 0;
-#X connect 6 0 7 1;
+#X connect 4 0 7 0;
+#X connect 4 0 29 0;
+#X connect 4 1 6 0;
+#X connect 4 1 29 0;
+#X connect 5 0 6 1;
+#X connect 5 0 7 1;
 #X connect 6 0 8 1;
-#X connect 7 0 9 1;
-#X connect 8 0 9 0;
-#X connect 10 0 14 0;
-#X connect 11 0 13 0;
-#X connect 11 0 12 0;
-#X connect 12 0 11 1;
-#X connect 14 0 11 0;
-#X connect 15 0 10 0;
-#X connect 16 0 18 0;
-#X connect 16 0 17 0;
-#X connect 17 0 16 1;
-#X connect 19 0 16 0;
-#X connect 20 0 21 0;
-#X connect 21 0 11 1;
-#X connect 21 0 16 1;
-#X connect 23 0 27 0;
-#X connect 24 0 23 0;
-#X connect 25 0 23 0;
-#X connect 28 0 23 0;
-#X coords 0 668 1 667 85 60 0;
+#X connect 7 0 8 0;
+#X connect 9 0 13 0;
+#X connect 10 0 12 0;
+#X connect 10 0 11 0;
+#X connect 11 0 10 1;
+#X connect 13 0 10 0;
+#X connect 14 0 9 0;
+#X connect 15 0 17 0;
+#X connect 15 0 16 0;
+#X connect 16 0 15 1;
+#X connect 18 0 15 0;
+#X connect 19 0 20 0;
+#X connect 20 0 10 1;
+#X connect 20 0 15 1;
+#X connect 22 0 26 0;
+#X connect 23 0 22 0;
+#X connect 24 0 22 0;
+#X connect 26 0 28 1;
+#X connect 27 0 28 0;
+#X connect 28 0 22 0;
+#X connect 29 0 0 0;
+#X connect 29 1 3 0;
+#X connect 29 2 2 0;
+#X connect 29 3 27 0;
+#X coords 0 578 1 577 85 60 0;
