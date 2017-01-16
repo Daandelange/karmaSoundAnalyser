@@ -12,7 +12,7 @@
 #X obj 33 48 bng 15 250 50 0 empty empty empty 0 -6 0 10 -262144 -1
 -1;
 #X text 31 15 Turn On/Off Pd.DSP;
-#N canvas 265 23 1009 680 karmaFiddle 1;
+#N canvas 265 23 1009 680 karmaFiddle 0;
 #X obj 217 287 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
 #X obj 272 317 unpack;
@@ -22,18 +22,18 @@
 -262144 -1 -1 0 256;
 #X obj 272 376 route 0;
 #X obj 300 276 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 25.4672 256;
+-262144 -1 -1 0 256;
 #X obj 345 389 > 50;
 #X obj 345 419 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 345 439 sel 1 0;
 #X obj 345 469 timer;
 #X floatatom 346 500 5 0 0 0 - - -, f 5;
-#X obj 346 552 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 346 552 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 202 337 Attack;
 #X obj 273 407 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 47.4751 256;
+-262144 -1 -1 0 256;
 #X text 214 406 Raw Pitch;
 #X text 344 317 Raw Amplitude;
 #X text 294 105 1024 = FFT window size;
@@ -45,9 +45,9 @@
 information.;
 #X obj 490 554 unpack;
 #X obj 490 577 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 126.906 256;
+-262144 -1 -1 0 256;
 #X obj 523 577 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0.0017855 256;
+-262144 -1 -1 0 256;
 #X obj 505 475 unpack;
 #X text 488 32 5 EQUALIZER BANDS WITH THEIR PITCH (Hz) AND AMPLITUDE
 (rms);
@@ -271,7 +271,7 @@ information.;
 #X floatatom 824 316 5 0 0 0 - - -, f 5;
 #X floatatom 825 337 5 0 0 0 - - -, f 5;
 #X obj 37 212 hsl 100 15 0 1 0 0 0 ¸áÿ¿» 0 0 0 0 4 -262144 -1
--1 6700 0;
+-1 0 0;
 #X obj 771 428 r silence;
 #X obj 771 320 r fft5p;
 #X obj 771 299 r fft5a;
@@ -295,7 +295,7 @@ information.;
 #X obj 320 252 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 265 250 (on/off);
-#X obj 909 445 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 909 445 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 893 466 5 0 0 0 - - -, f 5;
 #X obj 771 537 r fiddle_raw_pitch;
@@ -334,7 +334,7 @@ section;
 #X text 56 172 On/Off;
 #X obj 258 235 loadbang;
 #X msg 185 540 connect localhost 12000;
-#X obj 21 623 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 21 623 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 21 538 spigot;
 #X text 42 622 UDP State;
@@ -345,7 +345,7 @@ section;
 -1;
 #X obj 462 174 aubiopitch~;
 #X obj 462 221 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 1 256;
 #X obj 130 217 bng 15 50 10 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 217 218 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -375,7 +375,7 @@ section;
 #X obj 101 206 i;
 #X obj 143 207 + 1;
 #X obj 101 242 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 17 256;
+-262144 -1 -1 0 256;
 #X obj 101 322 div 4;
 #X obj 101 348 + 1;
 #X obj 199 350 + 1;
@@ -438,10 +438,10 @@ section;
 #X obj 158 554 s aubio_bpm;
 #X obj 716 174 aubiotss~;
 #X obj 716 259 vsl 15 100 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1724 1;
+-1 -1 9900 1;
 #X obj 716 198 env~;
 #X obj 767 259 vsl 15 100 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 311 1;
+-1 -1 9900 1;
 #X obj 767 199 env~;
 #X obj 716 151 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 0;
@@ -512,7 +512,7 @@ changed. (Sort of flood filter);
 #X obj 580 420 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 9900 1;
 #X obj 580 438 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 8324 1;
+-1 -1 9900 1;
 #X obj 496 315 hsl 40 15 -0.1 0.1 0 0 empty empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
 #X floatatom 154 78 5 0 0 0 - - -, f 5;
@@ -532,7 +532,7 @@ changed. (Sort of flood filter);
 #X obj 716 220 / 127;
 #X obj 722 403 loadbang;
 #X obj 787 261 vsl 15 100 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7253 1;
+-1 -1 4230 1;
 #X obj 846 317 -, f 2;
 #X obj 577 320 * 5;
 #X obj 478 354 -;
@@ -563,13 +563,9 @@ changed. (Sort of flood filter);
 #X obj 238 103 *~;
 #X obj 350 110 *~;
 #X obj 846 408 sqrt;
-#X obj 577 258 km_average 10;
-#X obj 478 376 km_average 3;
-#X obj 846 348 km_average 30;
 #X msg 41 244 bang;
 #X msg 217 246 bang;
 #X msg 130 247 bang;
-#X obj 158 489 km_average 30;
 #X obj 281 217 i 1;
 #X msg 281 261 bang;
 #X msg 355 174 bang;
@@ -598,13 +594,17 @@ changed. (Sort of flood filter);
 #X connect 7 0 1 0;
 #X connect 7 0 6 0;
 #X restore 716 553 pd clean_signal;
-#X connect 0 0 118 0;
+#X obj 577 258 km_smooth 10;
+#X obj 158 489 km_smooth 30;
+#X obj 846 349 km_smooth 30;
+#X obj 478 376 km_smooth 3;
+#X connect 0 0 115 0;
 #X connect 1 0 2 0;
 #X connect 2 0 57 0;
 #X connect 3 0 6 0;
 #X connect 3 0 111 0;
-#X connect 3 0 120 0;
-#X connect 4 0 119 0;
+#X connect 3 0 117 0;
+#X connect 4 0 116 0;
 #X connect 5 0 3 0;
 #X connect 5 1 4 0;
 #X connect 6 0 8 0;
@@ -615,7 +615,7 @@ changed. (Sort of flood filter);
 #X connect 10 0 12 0;
 #X connect 11 0 34 0;
 #X connect 12 0 14 0;
-#X connect 14 0 121 0;
+#X connect 14 0 129 0;
 #X connect 16 0 24 0;
 #X connect 16 0 32 0;
 #X connect 18 0 15 0;
@@ -623,8 +623,8 @@ changed. (Sort of flood filter);
 #X connect 18 2 17 0;
 #X connect 20 0 112 0;
 #X connect 21 0 113 0;
-#X connect 22 0 122 0;
-#X connect 22 1 124 0;
+#X connect 22 0 118 0;
+#X connect 22 1 120 0;
 #X connect 23 0 27 0;
 #X connect 27 0 50 0;
 #X connect 27 0 112 1;
@@ -642,7 +642,7 @@ changed. (Sort of flood filter);
 #X connect 40 0 41 0;
 #X connect 43 0 44 0;
 #X connect 44 0 59 1;
-#X connect 44 0 115 0;
+#X connect 44 0 128 0;
 #X connect 46 0 52 0;
 #X connect 48 0 49 0;
 #X connect 49 0 46 0;
@@ -677,15 +677,15 @@ changed. (Sort of flood filter);
 #X connect 84 0 38 0;
 #X connect 85 0 36 0;
 #X connect 86 0 83 0;
-#X connect 88 0 117 0;
+#X connect 88 0 130 0;
 #X connect 89 0 70 0;
 #X connect 89 0 68 0;
-#X connect 90 0 116 0;
+#X connect 90 0 131 0;
 #X connect 92 0 61 0;
 #X connect 93 0 95 0;
 #X connect 95 0 96 1;
-#X connect 95 0 129 0;
-#X connect 96 0 130 0;
+#X connect 95 0 125 0;
+#X connect 96 0 126 0;
 #X connect 96 0 98 0;
 #X connect 99 0 96 0;
 #X connect 102 0 103 0;
@@ -708,19 +708,19 @@ changed. (Sort of flood filter);
 #X connect 113 0 43 0;
 #X connect 113 0 35 0;
 #X connect 114 0 87 0;
-#X connect 115 0 58 0;
-#X connect 116 0 92 0;
-#X connect 117 0 105 0;
-#X connect 118 0 28 0;
-#X connect 119 0 30 0;
-#X connect 120 0 29 0;
-#X connect 121 0 11 0;
-#X connect 122 0 97 0;
-#X connect 122 0 123 0;
-#X connect 123 0 125 0;
-#X connect 124 0 126 0;
-#X connect 130 0 131 0;
-#X connect 131 0 101 0;
+#X connect 115 0 28 0;
+#X connect 116 0 30 0;
+#X connect 117 0 29 0;
+#X connect 118 0 97 0;
+#X connect 118 0 119 0;
+#X connect 119 0 121 0;
+#X connect 120 0 122 0;
+#X connect 126 0 127 0;
+#X connect 127 0 101 0;
+#X connect 128 0 58 0;
+#X connect 129 0 11 0;
+#X connect 130 0 105 0;
+#X connect 131 0 92 0;
 #X restore 98 338 pd aubio;
 #X obj 76 536 spigot;
 #X obj 109 469 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -731,7 +731,7 @@ changed. (Sort of flood filter);
 #X text 740 28 Todo: - http://forumnet.ircam.fr/product/antescofo/?lang=en
 ;
 #X obj 380 177 r aubio_is_playing;
-#X obj 497 194 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 497 194 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 775 308 450 300 clean_signal 0;
 #X obj 51 133 ==;
@@ -785,7 +785,7 @@ stuff. See resample.pd and sendmany-osc.pd;
 #X text 770 406 :: FIDDLE :: [pitch \, attack \, silence \, amplitude]
 ROUTING;
 #X obj 150 387 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6172 1;
+-1 -1 0 1;
 #X obj 379 313 r aubio_noisy;
 #X obj 497 330 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
