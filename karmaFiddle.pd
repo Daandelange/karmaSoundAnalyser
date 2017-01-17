@@ -1,0 +1,246 @@
+#N canvas 0 22 1223 669 10;
+#X obj 217 287 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 272 317 unpack;
+#X obj 272 352 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 345 334 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 272 376 route 0;
+#X obj 300 276 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 345 389 > 50;
+#X obj 345 419 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 345 439 sel 1 0;
+#X obj 345 469 timer;
+#X floatatom 346 500 5 0 0 0 - - -, f 5;
+#X obj 346 552 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 202 337 Attack;
+#X obj 273 407 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X text 214 406 Raw Pitch;
+#X text 344 317 Raw Amplitude;
+#X text 294 105 1024 = FFT window size;
+#X msg 297 127 npoints 1024;
+#X msg 297 153 npoints 2048;
+#X obj 346 522 > 2000;
+#X obj 346 578 s silence;
+#X text 81 32 Uses the fiddle object to extract FFT and some other
+information.;
+#X obj 490 554 unpack;
+#X obj 490 577 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 523 577 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 505 475 unpack;
+#X text 488 32 5 EQUALIZER BANDS WITH THEIR PITCH (Hz) AND AMPLITUDE
+(rms);
+#X obj 505 495 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 538 495 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 521 396 unpack;
+#X obj 521 416 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 554 416 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 537 317 unpack;
+#X obj 537 337 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 570 337 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 553 239 unpack;
+#X obj 553 259 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 586 259 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 80 212 inlet~ LeftAudio;
+#X obj 87 236 inlet~ RightAudio;
+#X text 137 522 Bang Detects 2 sec non-variation;
+#X text 135 536 (potentially end of track/set);
+#X text 391 521 ms;
+#X obj 146 305 s fiddle_pitch;
+#X obj 490 614 s fft1p;
+#X obj 523 594 s fft1a;
+#X obj 538 511 s fft2a;
+#X obj 521 452 s fft3p;
+#X obj 554 433 s fft3a;
+#X obj 537 373 s fft4p;
+#X obj 570 354 s fft4a;
+#X obj 553 295 s fft5p;
+#X obj 586 276 s fft5a;
+#X text 140 286 Cooked Pitch;
+#X text 357 276 Amplitude (db);
+#X obj 569 160 unpack;
+#X obj 569 180 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 602 180 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 602 197 s fft6a;
+#X obj 569 216 s fft6p;
+#X obj 585 82 unpack;
+#X obj 585 102 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 618 102 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 490 58 route 1 2 3 4 5 6 7;
+#X obj 217 253 fiddle~ 1024 1 50 7;
+#X obj 585 138 s fft7p;
+#X obj 618 119 s fft7a;
+#X obj 505 530 s fft2p;
+#X obj 356 356 s fiddle_raw_amp;
+#X obj 300 294 s fiddle_amp;
+#X obj 105 107 inlet on_off_switch;
+#X obj 84 112 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 216 428 s fiddle_raw_pitch;
+#X obj 165 359 s fiddle_attack;
+#X obj 244 337 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 130 163 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 130 127 route 0 1;
+#X obj 155 164 i 1;
+#X obj 741 477 r karma-fiddle-off;
+#X obj 22 186 s karma-fiddle-off;
+#X obj 741 543 i 0;
+#X text 741 460 Reset all values;
+#X obj 748 500 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 199 164 i 0;
+#X obj 741 568 s fiddler_reset;
+#X obj 677 85 r fiddler_reset;
+#X obj 662 163 r fiddler_reset;
+#X obj 649 242 r fiddler_reset;
+#X obj 634 320 r fiddler_reset;
+#X obj 616 399 r fiddler_reset;
+#X obj 601 478 r fiddler_reset;
+#X obj 592 560 r fiddler_reset;
+#X obj 358 259 r fiddler_reset;
+#X obj 104 391 r fiddler_reset;
+#X msg 199 189 auto \$1;
+#X obj 748 520 delay 50;
+#X floatatom 806 60 5 0 0 0 Sending_Freq_(ms) - -, f 5;
+#X obj 829 109 loadbang;
+#X obj 829 129 i 1;
+#X obj 782 198 i;
+#X obj 820 199 + 1;
+#X floatatom 782 221 5 0 0 0 - - -, f 5;
+#X obj 783 150 OSCCleanFloat 100;
+#X obj 797 175 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 221 219 *~;
+#X obj 87 264 *~;
+#X text 747 358 TODO;
+#X text 745 372 http://stackoverflow.com/questions/20408388/how-to-filter-fft-data-for-audio-visualisation
+;
+#X connect 0 0 43 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 6 0;
+#X connect 3 0 68 0;
+#X connect 4 1 13 0;
+#X connect 5 0 69 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 9 0 10 0;
+#X connect 10 0 19 0;
+#X connect 11 0 20 0;
+#X connect 13 0 72 0;
+#X connect 17 0 64 0;
+#X connect 18 0 64 0;
+#X connect 19 0 11 0;
+#X connect 22 0 23 0;
+#X connect 22 1 24 0;
+#X connect 23 0 44 0;
+#X connect 24 0 45 0;
+#X connect 25 0 27 0;
+#X connect 25 1 28 0;
+#X connect 27 0 67 0;
+#X connect 28 0 46 0;
+#X connect 29 0 30 0;
+#X connect 29 1 31 0;
+#X connect 30 0 47 0;
+#X connect 31 0 48 0;
+#X connect 32 0 33 0;
+#X connect 32 1 34 0;
+#X connect 33 0 49 0;
+#X connect 34 0 50 0;
+#X connect 35 0 36 0;
+#X connect 35 1 37 0;
+#X connect 36 0 51 0;
+#X connect 37 0 52 0;
+#X connect 38 0 104 0;
+#X connect 39 0 105 0;
+#X connect 55 0 56 0;
+#X connect 55 1 57 0;
+#X connect 56 0 59 0;
+#X connect 57 0 58 0;
+#X connect 60 0 61 0;
+#X connect 60 1 62 0;
+#X connect 61 0 65 0;
+#X connect 61 0 102 0;
+#X connect 62 0 66 0;
+#X connect 63 0 22 0;
+#X connect 63 1 25 0;
+#X connect 63 2 29 0;
+#X connect 63 3 32 0;
+#X connect 63 4 35 0;
+#X connect 63 5 55 0;
+#X connect 63 6 60 0;
+#X connect 64 0 0 0;
+#X connect 64 1 73 0;
+#X connect 64 1 74 0;
+#X connect 64 2 1 0;
+#X connect 64 3 5 0;
+#X connect 64 4 63 0;
+#X connect 70 0 71 0;
+#X connect 71 0 76 0;
+#X connect 75 0 79 0;
+#X connect 76 0 75 0;
+#X connect 76 0 83 0;
+#X connect 76 1 77 0;
+#X connect 77 0 94 0;
+#X connect 77 0 104 1;
+#X connect 77 0 105 1;
+#X connect 78 0 80 0;
+#X connect 78 0 82 0;
+#X connect 80 0 84 0;
+#X connect 82 0 95 0;
+#X connect 83 0 94 0;
+#X connect 83 0 104 1;
+#X connect 83 0 105 1;
+#X connect 85 0 62 0;
+#X connect 85 0 61 0;
+#X connect 86 0 57 0;
+#X connect 86 0 56 0;
+#X connect 87 0 37 0;
+#X connect 87 0 36 0;
+#X connect 88 0 34 0;
+#X connect 88 0 33 0;
+#X connect 89 0 31 0;
+#X connect 89 0 30 0;
+#X connect 90 0 28 0;
+#X connect 90 0 27 0;
+#X connect 91 0 24 0;
+#X connect 91 0 23 0;
+#X connect 92 0 5 0;
+#X connect 92 0 3 0;
+#X connect 93 0 13 0;
+#X connect 93 0 0 0;
+#X connect 94 0 64 0;
+#X connect 95 0 80 0;
+#X connect 97 0 98 0;
+#X connect 98 0 102 1;
+#X connect 99 0 101 0;
+#X connect 99 0 100 0;
+#X connect 100 0 99 1;
+#X connect 102 0 103 0;
+#X connect 103 0 99 0;
+#X connect 104 0 64 0;
+#X connect 105 0 64 0;
