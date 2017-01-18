@@ -1,0 +1,49 @@
+#N canvas 0 22 736 648 10;
+#X obj 154 151 env~;
+#X obj 327 154 env~;
+#X text 167 39 :: BALANCE ::;
+#X obj 154 173 dbtorms;
+#X obj 327 174 dbtorms;
+#X obj 154 109 inlet~ left;
+#X obj 327 109 inlet~ right;
+#X obj 327 359 outlet balance;
+#X text 169 55 Calculates the difference between left and right channel
+amplitude.;
+#X obj 0 0 cnv 15 85 88 empty empty empty 20 12 0 14 -191407 -66577
+0;
+#X obj 17 28 vsl 10 40 0 1 0 0 empty \$0-b-right R 2 -9 0 10 -262144
+-1 -1 133 1;
+#X obj 4 28 vsl 10 40 0 1 0 0 empty \$0-b-left L 2 -9 0 10 -262144
+-1 -1 202 1;
+#X obj 36 60 hsl 40 10 -1 1 0 0 empty \$0-b-balance empty -2 -8 0 10
+-262144 -1 -1 1404 1;
+#X obj 166 199 s \$0-b-left;
+#X obj 343 199 s \$0-b-right;
+#X obj 336 312 s \$0-b-balance;
+#X obj 327 337 change;
+#X text 32 44 BALANCE;
+#X obj 327 233 /;
+#X obj 349 290 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4572 1;
+#X obj 327 266 - 1;
+#X text 1 74 L;
+#X text 37 74 R;
+#X text 74 74 B;
+#X obj 154 232 outlet L_amp;
+#X obj 235 232 outlet R_amp;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 3 0 13 0;
+#X connect 3 0 18 1;
+#X connect 3 0 24 0;
+#X connect 4 0 14 0;
+#X connect 4 0 18 0;
+#X connect 4 0 25 0;
+#X connect 5 0 0 0;
+#X connect 6 0 1 0;
+#X connect 16 0 7 0;
+#X connect 18 0 20 0;
+#X connect 20 0 19 0;
+#X connect 20 0 15 0;
+#X connect 20 0 16 0;
+#X coords 0 -1 1 1 85 90 1 0 0;
