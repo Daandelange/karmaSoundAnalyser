@@ -1,25 +1,31 @@
 karmaSoundAnalyser
 ==================
 
-A Puredata real-time music analysis patch retrieving sensitive information from an audio stream by using various methods. Streams data over a LAN using OSC.  
+A Puredata real-time music analysis patch retrieving humanly sensitive information from a live audio stream by using various methods.  
+Streams [Music Information Retrieval](https://en.wikipedia.org/wiki/Music_information_retrieval) data over a LAN using [OSC](https://en.wikipedia.org/wiki/Open_Sound_Control).
+Pure Data is multiplatform, as is this patch: Linux, Mac & Windows.  
 
 ![Preview](https://raw.githubusercontent.com/Karma-Kusala/karmaSoundAnalyser/master/karmaSoundAnalyser.png)  
-_Note: Old screenshot._ [Click here to watch a demo video](https://vimeo.com/84516862)
+_Note: Old screenshot._ [Click here to watch a more recent demo video](https://vimeo.com/84516862)
 
-## Details
-__Currently the Pd-Vanilla version works best.__  
+## Details   
+karmaSoundAnalyser is divided into several `.pd` abstractions, each one handling a particular music aspect analysis. 
+This Pure Data patch uses lib Aubio for onset and tempo detection.  
+Other features include an alternative onSet detection, pitch detection, silence detection and a 5-band equaliser, note detection, etc.  
+There are also some other experimental musical properties yet to be defined.
 
-It uses lib Aubio for onset and tempo detection.  
-Other features include an alternative onSet detection, pitch detection, silence detection and a 5-band equaliser.  
+For a full list of MIR data, please refer to the [OSC addresses table](https://github.com/Karma-Kusala/karmaSoundAnalyser/blob/master/OSCRoutes.md).
 
-__Note__: _not all collected data is yet forwarded trough OSC._  
+__Note__: _Not all collected data is yet forwarded trough OSC._  
 
 __Note__: _Configure Pd to load aubio on launch or you'll have to open the pd patch twice._  
 
-## Dependencies
-  
-[Puredata](http://puredata.info/) - The host app for this patch.  
-[Aubio Pd plugin](http://aubio.org/pd-aubio/) (v0.4)  
+## Dependencies  
+
+- [Pure Data](http://puredata.info/) `v0.47-1-64bit` - The host app for this patch.  
+- [Lib Aubio Pd plugin](http://aubio.org/pd-aubio/) `v0.4`  - A Pd plugin for detecting tempo and more.
+- Recomended: A __wired__ LAN for better performance.
+
 
 ## Installation
 ### Linux
@@ -27,19 +33,20 @@ __Note__: _Configure Pd to load aubio on launch or you'll have to open the pd pa
 add /usr/lib/pg/extra/cyclone to your pb library search paths (from pd preferences)  
 Start Pd with `/usr/bin/pd -rt -oss -audiooutdev "2,3,4,5,6" -outchannels "2,2,2,2,2"`.  
 
-Installing Jack on linux can also be useful.  
+Installing Jack on linux can also be useful for routing audio.  
 `sudo-apt-get install jackd qjackctl`  
-__Tested on__: Ubuntu 14.0, Pd-Vanilla (latest) (64 bit), pd-aubio 0.4.
+
+### Rpi
+Follow the Linux installation notes.
+Feel free to add additional setup notes in a pull request. :-)
 
 ### Mac OSX
-On mac you need [Pd-vanilla 0.47-1-64bit](https://puredata.info/downloads/pure-data) and [Aubio](http://aubio.org/pd-aubio/), then it should work out of the box.  
-Installing [SoundFlower](https://github.com/mattingalls/Soundflower) or [Jack](http://www.jackaudio.org/) can be usefull for routing system Audio.  
+On mac you need [Pd-vanilla 0.47-1-64bit](https://puredata.info/downloads/pure-data) and [Aubio 0.4](http://aubio.org/pd-aubio/), then it should work out of the box. Later versions should also work.  
 
-__Hint__: _To get started quickly, use [VLC](http://www.videolan.org/) to play a track and output it trough Soundflower, then set the Pd sound input to Soundflower accordingly._  
-__Tested on__: OSX 10.10 ->10.12, Pd-Extended 0.43.4 (64 bit), Pd-Vanilla 0.46-7 (64 bit), Pd-Vanilla 0.47-1 (64 bit), all with Aubio 0.4.
+__Hint__: _To get started quickly, use [VLC](http://www.videolan.org/) to play a track and output it trough [SoundFlower](https://github.com/mattingalls/Soundflower) (2ch), then set the Pd sound input to Soundflower accordingly. Alternatively use [Jack OSX](http://www.jackaudio.org/) to route audio._  
 
 ### Windows
-Untested but there's no reason it won't work.  
+Sorry, windows is yet untested but there's no reason it won't work.  
 Feel free to add setup notes in a pull request. :-)
 
 ## Thanks
