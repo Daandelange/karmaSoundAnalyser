@@ -1,197 +1,238 @@
-#N canvas 122 22 1203 669 10;
-#X obj 192 216 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 633 174 aubiopitch~;
-#X obj 633 221 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 259.195 256;
-#X obj 281 217 bng 15 50 10 0 empty empty empty 17 7 0 10 -262144 -1
+#N canvas 74 22 1248 659 10;
+#X obj 39 329 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 368 218 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 555 286 aubiopitch~;
+#X obj 555 333 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 108 256;
+#X obj 128 330 bng 15 50 10 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 215 331 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 281 173 aubiotempo~ 0.5;
-#X text 256 18 Uses lib Aubio to get several MIR information;
+#X obj 128 286 aubiotempo~ 0.5;
+#X text 286 31 Uses lib Aubio to get several MIR information;
 #X obj 409 64 inlet~ LeftAudio;
 #X obj 521 64 inlet~ RightAudio;
-#X obj 477 174 aubioquiet~;
+#X obj 324 287 aubioquiet~;
 #X obj 686 71 inlet on_off_switch;
 #X obj 536 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 633 286 s aubio_pitch;
-#X obj 887 174 aubiotss~;
-#X obj 887 259 vsl 15 100 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 348 1;
-#X obj 887 198 env~;
-#X obj 938 259 vsl 15 100 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 165 1;
-#X obj 938 199 env~;
-#X obj 887 151 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 917 174 aubiotss~;
+#X obj 917 259 vsl 15 100 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2330 1;
+#X obj 917 198 env~;
+#X obj 968 259 vsl 15 100 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 187 1;
+#X obj 968 199 env~;
+#X obj 917 151 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 0;
-#X floatatom 958 166 5 0 0 0 - - -, f 5;
-#X text 884 133 Variation Threshold;
-#X obj 748 176 aubiozcr~;
-#X floatatom 748 338 5 0 0 0 - - -, f 5;
-#X obj 748 466 s aubio_zcr;
-#X obj 23 592 i 0;
-#X text 23 504 Reset all values;
-#X obj 33 546 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X floatatom 988 166 5 0 0 0 - - -, f 5;
+#X text 914 133 Variation Threshold;
+#X obj 768 186 aubiozcr~;
+#X floatatom 768 238 5 0 0 0 - - -, f 5;
+#X obj 40 551 i 0;
+#X text 40 463 Reset all values;
+#X obj 50 505 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 33 566 delay 1000;
-#X obj 23 521 r aubio-off;
-#X obj 23 619 s aubio_reset;
-#X obj 1007 225 r aubio_reset;
-#X obj 642 197 r aubio_reset;
-#X floatatom 748 399 5 0 0 0 - - -, f 5;
-#X obj 714 415 -;
-#X obj 714 437 abs;
-#X obj 693 521 sqrt;
-#X text 184 75 Treshold Tempo;
-#X text 185 98 Treshold OnSet;
-#X obj 762 378 r aubio_reset;
-#X text 755 321 Zcr;
-#X text 784 400 Smoothed;
-#X obj 731 488 r aubio_reset;
-#X obj 751 517 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 9900 1;
-#X obj 751 538 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2607 1;
-#X obj 667 415 hsl 40 15 -0.1 0.1 0 0 empty empty empty -2 -8 0 10
+#X obj 50 525 delay 1000;
+#X obj 40 480 r aubio-off;
+#X obj 40 578 s aubio_reset;
+#X floatatom 768 299 5 0 0 0 - - -, f 5;
+#X obj 734 315 -;
+#X obj 734 337 abs;
+#X obj 713 421 sqrt;
+#X text 12 172 Treshold Tempo;
+#X text 13 195 Treshold OnSet;
+#X text 775 221 Zcr;
+#X text 804 300 Smoothed;
+#X obj 771 417 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 435 1;
+#X obj 771 438 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 799 1;
+#X obj 687 315 hsl 40 15 -0.1 0.1 0 0 empty empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
-#X floatatom 325 78 5 0 0 0 - - -, f 5;
-#X obj 278 78 hsl 40 15 0 4 0 0 empty empty empty -2 -8 0 10 -262144
+#X floatatom 153 175 5 0 0 0 - - -, f 5;
+#X obj 106 175 hsl 40 15 0 4 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X floatatom 325 98 5 0 0 0 - - -, f 5;
-#X obj 278 99 hsl 40 15 0 2 0 0 empty empty empty -2 -8 0 10 -262144
+#X floatatom 153 195 5 0 0 0 - - -, f 5;
+#X obj 106 196 hsl 40 15 0 2 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X floatatom 677 434 5 0 0 0 - - -, f 5;
-#X text 273 56 PARAMETERS;
-#X text 662 398 Treshold;
-#X obj 987 397 -, f 2;
-#X obj 748 420 * 5;
-#X obj 649 454 -;
-#X text 746 553 ZeroCross Variation;
-#X obj 693 498 * 2;
-#X obj 477 226 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X floatatom 697 334 5 0 0 0 - - -, f 5;
+#X text 101 153 PARAMETERS;
+#X text 682 298 Treshold;
+#X obj 917 397 -, f 2;
+#X obj 768 340 * 5;
+#X obj 669 354 -;
+#X text 766 453 ZeroCross Variation;
+#X obj 713 398 * 2;
+#X obj 324 339 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 987 443 sqrt;
-#X text 998 487 (~Sound similarity indicator);
-#X text 746 567 (~cymbal detection);
-#X obj 830 615 aubio;
-#X obj 192 171 aubioonset~;
+#X obj 917 449 sqrt;
+#X text 766 467 (~cymbal detection);
+#X obj 858 16 aubio;
+#X obj 39 284 aubioonset~;
 #X obj 409 103 *~;
 #X obj 521 110 *~;
-#X obj 987 466 sqrt;
-#X text 872 616 Loads Aubio lib on misconfigured Pd installations;
-#X obj 748 358 km_smooth 10;
-#X obj 987 420 km_smooth 30;
-#X obj 649 476 km_smooth 3;
-#X obj 938 226 dbtorms;
-#X text 880 96 Transients are new sounds and unstable ones;
-#X text 881 116 Steady-state indicate continuous \, similar sounds
-;
-#X obj 887 225 dbtorms;
-#X obj 990 505 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5150 1;
-#X obj 642 243 vsl 15 35 100 1200 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 492 1;
-#X obj 540 196 i 1;
-#X obj 477 196 i 0;
-#X obj 477 246 == 0;
-#X obj 477 269 s aubio_is_quiet;
-#X obj 514 246 s aubio_is_playing;
-#X text 874 630 (not to reload the sketch);
-#X obj 1 15 cnv 15 148 103 empty empty empty 20 12 0 14 -191407 -66577
+#X obj 917 472 sqrt;
+#X text 898 13 Loads Aubio lib on misconfigured Pd installations;
+#X obj 768 258 km_smooth 10;
+#X obj 917 426 km_smooth 30;
+#X obj 669 376 km_smooth 3;
+#X obj 968 226 dbtorms;
+#X text 910 96 Transients are new sounds and unstable ones;
+#X obj 917 225 dbtorms;
+#X obj 920 541 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 7167 1;
+#X obj 564 355 vsl 15 60 0 1200 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 531 1;
+#X obj 387 309 i 1;
+#X obj 324 309 i 0;
+#X obj 440 363 == 0;
+#X text 900 27 (not to reload the sketch);
+#X obj 1 15 cnv 15 248 53 empty empty Settings 18 8 0 14 -191407 -66577
 0;
-#X obj 57 103 bng 15 250 50 0 empty \$0-a-Tempo Tempo 0 -7 0 10 -262144
+#X obj 138 382 outlet tempo;
+#X obj 221 382 outlet tempoAlt;
+#X obj 215 405 s \$0-a-tempoAlt;
+#X obj 39 405 s \$0-a-attack;
+#X obj 45 383 outlet attack;
+#X obj 333 383 outlet isPlaying;
+#X text 264 581 Todo: make a list of detected frequencies from aubiopitch?
+;
+#X obj 568 452 outlet pitch;
+#X obj 555 474 s \$0-a-pitch;
+#X obj 555 429 change;
+#X obj 128 405 s \$0-a-tempo;
+#X obj 325 406 s \$0-a-isPlaying;
+#X obj 440 407 s \$0-a-isQuiet;
+#X obj 450 384 outlet isQuiet;
+#X text 555 498 Max 43 Hz update rate;
+#X text 285 16 :: karmaAubio ::;
+#X obj 774 385 s \$0-a-zcr;
+#X obj 783 362 outlet zcr;
+#X obj 768 318 change;
+#X text 923 559 (~Sound variation indicator);
+#X obj 917 494 max 0;
+#X obj 917 517 min 1;
+#X obj 917 579 change;
+#X obj 1010 320 outlet transients;
+#X obj 1072 274 outlet steadyState;
+#X obj 1062 252 change;
+#X obj 1 68 cnv 15 248 50 empty empty Outlets 18 8 0 14 -162280 -66577
+0;
+#X obj 26 103 bng 15 250 50 0 empty \$0-a-tempo Tempo 0 -15 0 8 -262144
 -1 -1;
-#X obj 291 269 outlet tempo;
-#X obj 374 269 outlet tempoAlt;
-#X obj 281 292 s \$0-a-tempo;
-#X obj 368 292 s \$0-a-tempoAlt;
-#X obj 132 102 bng 15 250 50 0 empty \$0-a-tempoAlt TempoAlt 2 -7 0
-10 -262144 -1 -1;
-#X obj 0 103 bng 15 250 50 0 empty \$0-a-attack Attack 2 -7 0 10 -262144
+#X obj 56 103 bng 15 250 50 0 empty \$0-a-tempoAlt TempoAlt 0 -7 0
+8 -262144 -1 -1;
+#X obj 0 103 bng 15 250 50 0 empty \$0-a-attack Attack 2 -7 0 8 -262144
 -1 -1;
-#X obj 192 292 s \$0-a-attack;
-#X obj 198 270 outlet attack;
-#X connect 0 0 90 0;
-#X connect 0 0 91 0;
-#X connect 1 0 2 0;
-#X connect 2 0 12 0;
-#X connect 2 0 75 0;
-#X connect 3 0 84 0;
-#X connect 3 0 86 0;
-#X connect 4 0 85 0;
-#X connect 4 0 87 0;
+#X obj 88 103 tgl 15 0 empty \$0-a-isPlaying isPlaying 0 -15 0 8 -262144
+-1 -1 1 1;
+#X obj 118 103 tgl 15 0 empty \$0-a-isQuiet isQuiet 0 -7 0 8 -262144
+-1 -1 0 1;
+#X obj 181 85 vsl 10 30 0 1 0 0 empty \$0-a-zcr Zcr 0 -9 0 8 -262144
+-1 -1 127 1;
+#X obj 208 85 vsl 10 30 0 1 0 0 empty \$0-a-transients Transients -10
+-9 0 8 -262144 -1 -1 683 1;
+#X obj 237 85 vsl 10 30 0 1 0 0 empty \$0-a-steadyState SteadyState
+-43 -16 0 8 -262144 -1 -1 55 1;
+#X obj 997 294 change;
+#X obj 997 340 s \$0-a-transients;
+#X obj 1062 296 s \$0-a-steadyState;
+#X obj 555 309 i;
+#X text 580 309 Round;
+#X obj 138 104 nbx 4 14 0 1e+37 0 0 empty \$0-a-pitch Pitch 10 -15
+0 8 -262144 -1 -1 108 256;
+#X text 911 116 Steady-state indicates continuous \, similar sounds
+;
+#X connect 0 0 76 0;
+#X connect 0 0 77 0;
+#X connect 1 0 111 0;
+#X connect 2 0 67 0;
+#X connect 2 0 82 0;
+#X connect 3 0 73 0;
+#X connect 3 0 83 0;
+#X connect 4 0 74 0;
+#X connect 4 0 75 0;
 #X connect 5 0 3 0;
 #X connect 5 1 4 0;
-#X connect 7 0 63 0;
-#X connect 8 0 64 0;
-#X connect 9 0 77 0;
-#X connect 9 1 76 0;
+#X connect 7 0 56 0;
+#X connect 8 0 57 0;
+#X connect 9 0 69 0;
+#X connect 9 1 68 0;
 #X connect 10 0 11 0;
-#X connect 11 0 63 1;
-#X connect 11 0 64 1;
-#X connect 13 0 15 0;
-#X connect 13 1 17 0;
-#X connect 14 0 52 0;
-#X connect 15 0 73 0;
-#X connect 16 0 52 1;
-#X connect 17 0 70 0;
-#X connect 18 0 13 1;
-#X connect 18 0 19 0;
-#X connect 21 0 22 0;
-#X connect 22 0 33 1;
-#X connect 22 0 67 0;
-#X connect 24 0 29 0;
-#X connect 26 0 27 0;
-#X connect 27 0 24 0;
-#X connect 28 0 24 0;
-#X connect 28 0 26 0;
-#X connect 30 0 14 0;
-#X connect 30 0 16 0;
-#X connect 31 0 2 0;
-#X connect 32 0 33 0;
-#X connect 32 0 53 0;
-#X connect 33 0 34 0;
-#X connect 34 0 54 0;
-#X connect 35 0 43 0;
-#X connect 38 0 32 0;
-#X connect 41 0 43 0;
-#X connect 41 0 53 0;
-#X connect 44 0 49 0;
-#X connect 44 0 54 1;
-#X connect 46 0 45 0;
-#X connect 46 0 5 1;
-#X connect 48 0 47 0;
-#X connect 48 0 62 1;
-#X connect 52 0 68 0;
-#X connect 53 0 42 0;
-#X connect 53 0 23 0;
-#X connect 54 0 69 0;
-#X connect 56 0 35 0;
-#X connect 57 0 78 0;
-#X connect 57 0 80 0;
-#X connect 58 0 65 0;
-#X connect 62 0 0 0;
-#X connect 63 0 62 0;
-#X connect 63 0 5 0;
-#X connect 63 0 9 0;
-#X connect 63 0 1 0;
-#X connect 63 0 21 0;
-#X connect 63 0 13 0;
-#X connect 64 0 62 0;
-#X connect 64 0 5 0;
-#X connect 64 0 9 0;
-#X connect 64 0 1 0;
-#X connect 64 0 21 0;
-#X connect 64 0 13 0;
-#X connect 65 0 74 0;
-#X connect 67 0 32 0;
-#X connect 68 0 58 0;
-#X connect 69 0 56 0;
-#X connect 70 0 16 0;
-#X connect 73 0 14 0;
-#X connect 76 0 57 0;
-#X connect 77 0 57 0;
-#X connect 78 0 79 0;
-#X coords 0 -1 1 1 150 120 1 0 0;
+#X connect 11 0 56 1;
+#X connect 11 0 57 1;
+#X connect 12 0 14 0;
+#X connect 12 1 16 0;
+#X connect 13 0 46 0;
+#X connect 14 0 65 0;
+#X connect 15 0 46 1;
+#X connect 16 0 63 0;
+#X connect 17 0 12 1;
+#X connect 17 0 18 0;
+#X connect 20 0 21 0;
+#X connect 21 0 29 1;
+#X connect 21 0 60 0;
+#X connect 22 0 27 0;
+#X connect 24 0 25 0;
+#X connect 25 0 22 0;
+#X connect 26 0 22 0;
+#X connect 26 0 24 0;
+#X connect 28 0 29 0;
+#X connect 28 0 91 0;
+#X connect 29 0 30 0;
+#X connect 30 0 48 0;
+#X connect 31 0 37 0;
+#X connect 38 0 43 0;
+#X connect 38 0 48 1;
+#X connect 40 0 39 0;
+#X connect 40 0 5 1;
+#X connect 42 0 41 0;
+#X connect 42 0 55 1;
+#X connect 46 0 61 0;
+#X connect 47 0 36 0;
+#X connect 47 0 89 0;
+#X connect 47 0 90 0;
+#X connect 48 0 62 0;
+#X connect 50 0 31 0;
+#X connect 51 0 70 0;
+#X connect 51 0 78 0;
+#X connect 51 0 84 0;
+#X connect 52 0 58 0;
+#X connect 55 0 0 0;
+#X connect 56 0 55 0;
+#X connect 56 0 5 0;
+#X connect 56 0 9 0;
+#X connect 56 0 20 0;
+#X connect 56 0 12 0;
+#X connect 56 0 1 0;
+#X connect 57 0 55 0;
+#X connect 57 0 5 0;
+#X connect 57 0 1 0;
+#X connect 57 0 20 0;
+#X connect 57 0 12 0;
+#X connect 57 0 9 0;
+#X connect 58 0 93 0;
+#X connect 60 0 28 0;
+#X connect 61 0 52 0;
+#X connect 62 0 50 0;
+#X connect 63 0 15 0;
+#X connect 63 0 98 0;
+#X connect 65 0 13 0;
+#X connect 65 0 108 0;
+#X connect 66 0 95 0;
+#X connect 68 0 51 0;
+#X connect 69 0 51 0;
+#X connect 70 0 85 0;
+#X connect 70 0 86 0;
+#X connect 82 0 81 0;
+#X connect 82 0 80 0;
+#X connect 91 0 47 0;
+#X connect 93 0 94 0;
+#X connect 94 0 66 0;
+#X connect 98 0 97 0;
+#X connect 98 0 110 0;
+#X connect 108 0 96 0;
+#X connect 108 0 109 0;
+#X connect 111 0 2 0;
+#X coords 0 -1 1 1 250 120 1 0 0;

@@ -1,0 +1,106 @@
+#N canvas 215 134 944 509 10;
+#X text 378 249 OSC SERVER CONFIGURATION;
+#X text 201 258 - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+#X obj 203 418 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 203 363 spigot;
+#X obj 298 301 spigot;
+#X obj 298 324 print;
+#X obj 203 396 netsend -u -b;
+#X obj 211 439 s osc_status;
+#X obj 203 275 r osc_out_raw;
+#X msg 387 355 connect 192.168.0.11 12000;
+#X text 202 249 :: OSC ROUTING ::;
+#X text 664 265 Listen for re-connection..;
+#X obj 656 325 oscparse;
+#X msg 656 282 listen 12001;
+#X obj 656 304 netreceive -u -b 12001;
+#X obj 716 368 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 387 378 disconnect;
+#X msg 852 287 listen 0;
+#X obj 656 416 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 656 367 route km;
+#X obj 656 346 list trim;
+#X text 738 368 Unrecognized command received;
+#X text 754 284 Disconnects -->;
+#X obj 656 392 route reconnectKMSA;
+#X obj 788 392 route ping;
+#X obj 788 414 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 207 62 karmaOSCNative can be replaced with karmaOSCMrPeach
+for better performance \, but requires to install the Mr Peach library.
+;
+#X text 207 23 :: karmaOSCNative ::;
+#X obj 1 125 cnv 15 178 104 empty empty empty 20 12 0 14 -191407 -66577
+0;
+#X obj 8 206 tgl 15 0 \$0-kon-debug \$0-kon-debug-set empty 17 7 0
+10 -262144 -1 -1 0 1;
+#X text 27 206 Print Output to Console;
+#X obj 331 275 r \$0-kon-debug;
+#X text 4 146 IP;
+#X text 22 128 Configuration;
+#X obj 24 167 tgl 15 1 empty \$0-kon-status OSC_out_status 17 7 0 10
+-262144 -1 -1 0 1;
+#X obj 788 435 km_osc_format /pong;
+#X msg 24 146 connect localhost 12000;
+#X obj 203 461 s \$0-kon-status;
+#X text 293 396 -u = UDP \, -b = binary;
+#X text 224 417 UDP Status;
+#X obj 206 129 loadbang;
+#X obj 207 163 s \$0-kon-netsend;
+#X obj 387 330 r \$0-kon-netsend;
+#X text 754 26 SET DEFAULTS;
+#X obj 758 49 loadbang;
+#X obj 758 97 s \$0-kon-debug-set;
+#X obj 758 73 i 0;
+#X text 294 440 Global notifier;
+#X obj 656 438 s \$0-kon-reconnect;
+#X obj 262 129 r \$0-kon-reconnect;
+#X obj 236 317 loadbang;
+#X obj 236 340 i 0;
+#X obj 656 244 loadbang;
+#X obj 208 202 s \$0-kon-netreceive;
+#X obj 592 223 r \$0-kon-netreceive;
+#X msg 24 185 listen 12001;
+#X msg 115 185 listen 0;
+#X text 207 39 Lets other Pd patches send data to osc_out_raw;
+#X text 690 456 Other routes have yet to be defined.;
+#X connect 2 0 3 1;
+#X connect 2 0 7 0;
+#X connect 2 0 37 0;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 6 0 2 0;
+#X connect 8 0 4 0;
+#X connect 8 0 3 0;
+#X connect 9 0 6 0;
+#X connect 12 0 20 0;
+#X connect 13 0 14 0;
+#X connect 14 0 12 0;
+#X connect 16 0 6 0;
+#X connect 17 0 14 0;
+#X connect 18 0 48 0;
+#X connect 19 0 23 0;
+#X connect 19 0 24 0;
+#X connect 19 1 15 0;
+#X connect 20 0 19 0;
+#X connect 23 0 18 0;
+#X connect 24 0 25 0;
+#X connect 25 0 35 0;
+#X connect 31 0 4 1;
+#X connect 36 0 41 0;
+#X connect 40 0 36 0;
+#X connect 42 0 6 0;
+#X connect 44 0 46 0;
+#X connect 46 0 45 0;
+#X connect 49 0 36 0;
+#X connect 50 0 51 0;
+#X connect 51 0 3 1;
+#X connect 52 0 13 0;
+#X connect 54 0 14 0;
+#X connect 55 0 53 0;
+#X connect 56 0 53 0;
+#X coords 0 -1 1 1 180 120 1 0 110;
