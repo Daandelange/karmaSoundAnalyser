@@ -28,3 +28,10 @@ The following MIR variables are streamed over OSC.
 | /metronom/accentTick | bang   |             | A notification on the metronom accent tick (Same as tick #1). |
 | /metronom/cycles     | int    | 0 to &infin;| Number of cycles detected, increments every 4 _*_ ticks.<br> _*_ Based on `accent` default value: 4. |
 | /metronom/BPM        | int    | 0 to ±200   | Currently estimated BPM. |
+| __Fiddle__                                                    |
+| /fiddle/attack      | bang  |             | A notification on every beat. |
+| /fiddle/pitch       | int   | 0 to &infin;  | Tries to detect a dominating pitch, sends it's value (in Hz) if found, otherwise 0. |
+| /fiddle/pitchRaw    | int   | 0 to &infin;  | Same as above but updated more frequently. (_update rate 150Hz max_) |
+| /fiddle/amp         | float | 0.0 to 1.0    | Amplitude of audio signal. |
+| /fiddle/ampRaw      | float | 0.0 to 1.0    | Same as above but updated more frequently. (_update rate 150Hz max_) |
+| /fiddle/silence     | bang  | true / false  | Turns true after 2 secs of silence. |

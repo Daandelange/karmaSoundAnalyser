@@ -22,8 +22,8 @@
 #X obj 238 207 t f b;
 #X obj 239 261 i 0;
 #X obj 239 288 outlet countPerSec;
-#X text 132 184 Hz;
 #X text 102 30 Useful for regulating/debugging OSC messages.;
+#X text 132 184 /sec;
 #X connect 0 0 1 0;
 #X connect 0 0 4 0;
 #X connect 1 0 0 1;
