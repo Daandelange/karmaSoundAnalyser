@@ -1,4 +1,4 @@
-#N canvas 481 203 721 420 10;
+#N canvas 640 248 721 420 10;
 #X text 125 16 METRONOM;
 #X text 124 45 To do: set the timing of thack rather then default.
 ;
@@ -28,16 +28,16 @@
 #X obj 325 346 outlet cycles;
 #X obj 325 295 div 4;
 #X obj 325 267 i;
-#X obj 0 14 cnv 15 70 84 empty empty empty 20 12 0 14 -191407 -66577
+#X obj 1 14 cnv 15 80 84 empty empty empty 20 12 0 14 -191407 -66577
 0;
-#X obj 4 30 hradio 15 1 0 4 empty \$0-metronom-radio empty 0 -8 0 10
+#X obj 5 30 hradio 15 1 0 4 empty \$0-metronom-radio empty 0 -8 0 10
 -262144 -1 -1 0;
-#X obj 4 50 tgl 30 0 empty \$0-m-accent empty 17 7 0 10 -262144 -1
+#X obj 5 50 tgl 30 0 empty \$0-m-accent empty 17 7 0 10 -262144 -1
 -1 0 1;
-#X text 40 50 BPM;
-#X floatatom 42 65 4 0 0 0 - #0-m-bpm -, f 4;
-#X text 13 14 METRONOM;
-#X floatatom 42 82 4 0 0 0 Cycles #0-m-cycles -, f 4;
+#X text 48 50 BPM;
+#X floatatom 50 65 4 0 0 0 - #0-m-bpm -, f 4;
+#X text 14 14 METRONOM;
+#X floatatom 50 82 4 0 0 0 Cycles #0-m-cycles -, f 4;
 #X obj 228 258 s \$0-m-accent;
 #X obj 331 318 s \$0-m-cycles;
 #X obj 104 258 s \$0-metronom-radio;
@@ -81,4 +81,4 @@
 #X connect 39 0 42 0;
 #X connect 40 0 38 0;
 #X connect 42 0 6 0;
-#X coords 0 -1 1 1 70 100 1 0 0;
+#X coords 0 -1 1 1 80 100 1 0 0;
