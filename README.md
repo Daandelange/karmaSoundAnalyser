@@ -28,6 +28,7 @@ __Note__: _Configure Pd to load aubio on launch or you'll have to open the pd pa
 
 
 ## Installation
+
 ### Linux
 `sudo apt-get install puredata pd-aubio pd-cyclone`  
 add /usr/lib/pg/extra/cyclone to your pb library search paths (from pd preferences)  
@@ -48,6 +49,10 @@ __Hint__: _To get started quickly, use [VLC](http://www.videolan.org/) to play a
 ### Windows
 Sorry, windows is yet untested but there's no reason it won't work.  
 Feel free to add setup notes in a pull request. :-)
+
+## Run
+Simply open `karmaSoundAnalyser-PdVanilla.pd` with Pure Data.  
+You can _right click_ < _open_ each abstraction to see what's happening within. I recommend reading [the Pd Floss Manuals](http://write.flossmanuals.net/pure-data/introduction2/) if you're not familiar with Pd. ( [French version here](https://www.flossmanualsfr.net/puredata/) )
 
 ## Thanks
  - Julien Rancoeur ([Fx23](https://soundcloud.com/fx23) / [ADN](http://artdistorsionsnumeriques.com/) )
