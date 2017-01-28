@@ -1,6 +1,6 @@
 #N canvas 0 22 1223 669 10;
 #X obj 367 252 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 65.9639 256;
+-262144 -1 -1 0 256;
 #X obj 422 402 unpack;
 #X obj 422 437 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
@@ -8,7 +8,7 @@
 -262144 -1 -1 0 256;
 #X obj 422 461 route 0;
 #X obj 450 241 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 91.3663 256;
+-262144 -1 -1 0 256;
 #X obj 691 433 > 50;
 #X obj 691 456 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -28,16 +28,16 @@
 information.;
 #X obj 830 559 unpack;
 #X obj 830 582 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 191.999 256;
+-262144 -1 -1 0 256;
 #X obj 863 582 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0.330663 256;
+-262144 -1 -1 0 256;
 #X obj 845 480 unpack;
 #X text 827 43 5 EQUALIZER BANDS WITH THEIR PITCH (Hz) AND AMPLITUDE
 (rms);
 #X obj 845 500 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 1928.7 256;
+-262144 -1 -1 0 256;
 #X obj 878 500 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0.0157569 256;
+-262144 -1 -1 0 256;
 #X obj 861 401 unpack;
 #X obj 861 421 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
@@ -122,7 +122,7 @@ information.;
 #X obj 21 168 bng 15 250 50 0 empty \$0-f-attack Attack 0 -7 0 8 -262144
 -1 -1;
 #X obj 56 169 nbx 4 14 0 1e+37 0 0 empty \$0-f-pitch Pitch 0 -8 0 8
--262144 -1 -1 65 256;
+-262144 -1 -1 0 256;
 #X text 486 514 Round INT;
 #X obj 422 536 change;
 #X obj 555 509 change;
@@ -132,17 +132,17 @@ information.;
 #X obj 429 559 s \$0-f-pitchRaw;
 #X obj 422 582 outlet pitchRaw;
 #X obj 555 440 km_resample_avg 150;
-#X obj 140 155 vsl 8 25 0 1 0 0 empty \$0-f-amp Amplitude 0 -9 0 8
--262144 -1 -1 667 1;
+#X obj 140 155 vsl 8 25 0 1 0 0 empty \$0-f-amp Amplitude 0 -7 0 8
+-262144 -1 -1 0 1;
 #X obj 555 464 dbtorms;
 #X obj 555 486 min 1;
 #X text 693 413 Silence;
 #X obj 96 169 nbx 4 14 0 1e+37 0 0 empty \$0-f-pitchRaw RawPitch 0
--8 0 8 -262144 -1 -1 66 256;
+-8 0 8 -262144 -1 -1 0 256;
 #X obj 422 513 expr $i1;
 #X obj 241 266 expr $i1;
 #X obj 699 614 s \$0-f-silence;
-#X obj 179 168 tgl 15 0 empty \$0-f-silence Silence 0 -7 0 8 -262144
+#X obj 203 168 tgl 15 0 empty \$0-f-silence Silence -17 -7 0 8 -262144
 -1 -1 0 1;
 #X obj 691 636 outlet silence;
 #X obj 691 571 change;
@@ -154,8 +154,8 @@ information.;
 #X obj 450 367 outlet amplitude;
 #X obj 555 552 outlet amplitudeRaw;
 #X obj 562 530 s \$0-f-ampRaw;
-#X obj 160 155 vsl 8 25 0 1 0 0 empty \$0-f-ampRaw RawAmplitude 0 -15
-0 8 -262144 -1 -1 625 1;
+#X obj 172 155 vsl 8 25 0 1 0 0 empty \$0-f-ampRaw RawAmplitude 0 -15
+0 8 -262144 -1 -1 0 1;
 #X connect 0 0 110 0;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
