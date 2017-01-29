@@ -35,3 +35,5 @@ The following MIR variables are streamed over OSC.
 | /fiddle/amp         | float | 0.0 to 1.0    | Amplitude of audio signal. |
 | /fiddle/ampRaw      | float | 0.0 to 1.0    | Same as above but updated more frequently. (_update rate 150Hz max_) |
 | /fiddle/silence     | bang  | true / false  | Turns true after 2 secs of silence. |
+| __Notes__                                                    |
+| /notes/1 (to 7)      | array  |             | Frequently detected notes. Sends an array of: [ID, amplitude, frequency, change flag] |
