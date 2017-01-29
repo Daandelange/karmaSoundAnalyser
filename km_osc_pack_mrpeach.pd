@@ -1,0 +1,17 @@
+#N canvas 657 318 450 300 10;
+#X obj 29 42 inlet;
+#X obj 29 215 outlet;
+#X text 28 12 Packs OSC messages for karmaOSCMrPeach.pd;
+#X obj 29 181 mrpeach/packOSC;
+#X obj 172 45 loadbang;
+#X obj 172 66 symbol \$1;
+#X text 271 88 Sets the OSC address;
+#X msg 172 87 prefix /kmsa\$1;
+#X obj 29 121 list prepend /kmsa\$1;
+#X obj 29 143 list trim;
+#X connect 0 0 8 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 7 0;
+#X connect 8 0 9 0;
+#X connect 9 0 3 0;

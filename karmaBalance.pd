@@ -1,4 +1,4 @@
-#N canvas 0 22 736 648 10;
+#N canvas 0 22 572 440 10;
 #X obj 154 131 env~;
 #X obj 327 132 env~;
 #X text 167 39 :: BALANCE ::;
@@ -12,11 +12,11 @@ amplitude.;
 #X obj 1 14 cnv 15 83 74 empty empty empty 20 12 0 14 -191407 -66577
 0;
 #X obj 17 30 vsl 10 40 0 1 0 0 empty \$0-b-right R 2 -9 0 10 -262144
--1 -1 1172 1;
+-1 -1 323 1;
 #X obj 4 30 vsl 10 40 0 1 0 0 empty \$0-b-left L 2 -9 0 10 -262144
--1 -1 1124 1;
+-1 -1 330 1;
 #X obj 36 62 hsl 40 10 -1 1 0 0 empty \$0-b-balance empty -2 -8 0 10
--262144 -1 -1 2191 1;
+-262144 -1 -1 2119 1;
 #X obj 166 179 s \$0-b-left;
 #X obj 343 179 s \$0-b-right;
 #X obj 336 309 s \$0-b-balance;
@@ -24,7 +24,7 @@ amplitude.;
 #X text 32 46 BALANCE;
 #X obj 327 204 /;
 #X obj 346 294 hsl 55 8 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3033 1;
+-1 -1 2934 1;
 #X obj 327 226 - 1;
 #X text 1 74 L;
 #X text 37 74 R;

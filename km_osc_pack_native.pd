@@ -1,0 +1,11 @@
+#N canvas 150 293 450 300 10;
+#X obj 29 94 list prepend send;
+#X obj 29 117 list trim;
+#X obj 29 71 oscformat /kmsa\$1;
+#X obj 29 42 inlet;
+#X obj 29 145 outlet;
+#X text 28 12 Packs OSC messages for karmaOSCNative.pd;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
