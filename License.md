@@ -1,3 +1,5 @@
+Warning: This license has not been checked for compatibility with any of it's dependencies (Aubio, MrPeach, etc.). Please refer to their respective licenses if you use them.
+
 # MIT License
 
 Copyright (c) 2017 Daan de Lange

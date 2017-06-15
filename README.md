@@ -8,11 +8,15 @@ Pure Data is multiplatform, as is this patch: Linux, Mac & Windows.
 ![Preview](https://raw.githubusercontent.com/Karma-Kusala/karmaSoundAnalyser/master/karmaSoundAnalyser.png)  
 _Note:_ [Click here to watch an older demo video](https://vimeo.com/84516862)
 
+## License
+For the moment karmaSoundAnalyser's license is not clear. Particularly if you use it in a commercial project, please make sure to double-check the respective licenses of it's dependencies and their compatibility with the MIT license.  
+
 ## Details   
 karmaSoundAnalyser is divided into several `.pd` abstractions, each one handling the analysis of a particular musical aspect.  
-This Pure Data patch uses lib Aubio for onset and tempo detection.  
+This Pure Data patch uses the excellent lib Aubio for onset and tempo detection. Alternatively you can use karmaFiddle using the native `fiddle` object for onset detection.  
 Other features include an alternative onSet detection, pitch detection, silence detection, a 5-band equaliser, note detection, etc.  
 
+### OSC Routing
 For a full list of MIR data, please refer to the [OSC addresses table](https://github.com/Karma-Kusala/karmaSoundAnalyser/blob/master/OSCRoutes.md).
 
 __Note__: _Not all collected data is yet forwarded trough OSC._  
@@ -22,7 +26,7 @@ __Note__: _Configure Pd to load Aubio on launch or you'll have to open the pd pa
 ## Dependencies  
 
 - [Pure Data](http://puredata.info/) `v0.47-1-64bit` - The host app for this patch.  
-- [Lib Aubio Pd plugin](http://aubio.org/pd-aubio/) `v0.4`  - A Pd plugin for detecting tempo and more.
+- [Lib Aubio Pd plugin](http://aubio.org/pd-aubio/) `v0.4`  - A Pd plugin for detecting tempo and more. (Warning: GNU/GPL licensed)
 - Recomended: A __wired__ LAN for better performance.
 - Optional: MrPeach Pd externals.
 
@@ -65,4 +69,4 @@ I recommend reading [the Pd Floss Manuals](http://write.flossmanuals.net/pure-da
  - Clément Sablé( [Nëru](https://neru.io/) )  
  
 ----  
-Made for a [Karma Kusala](http://karma-kusala.com/) project.
+Brewed by [Daan de Lange](http://daandelange.com/) within the [Karma Kusala](http://karma-kusala.com/) lab.
